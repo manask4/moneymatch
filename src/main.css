@@ -29,14 +29,6 @@ img {
   border-radius: 50%;
 }
 
-.money {
-  margin-top: 1em;
-}
-
-nav {
-  padding: 1em 10em;
-}
-
 h1 {
   font-size: 2em;
   color: darkslategray;
@@ -67,9 +59,15 @@ h1 {
   width: 80%;
 }
 
+nav,
 .footer {
   padding: 0 2em;
   width: 100%;
+}
+
+nav {
+  margin-top: 1em;
+  margin-bottom: 0 !important;
 }
 
 .footer .content {
@@ -90,8 +88,11 @@ h1 {
 
 @media (min-width: 768px) {
   img {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
+  }
+  .money {
+    font-size: 1.5em;
   } 
 }
 

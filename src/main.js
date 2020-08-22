@@ -6,7 +6,8 @@ var stopTimerButton = document.getElementById("stop-timer");
 var userIncomeInput = document.getElementById("user-income");
 
 function start(userIncome) {
-  userIncome = (userIncome / 365 / 24 / 3600).toFixed(2);
+  userIncome = (userIncome / 365 / 24 / 3600).toFixed(3);
+  console.log(userIncome)
   startTimer();
   var startMs = new Date().getTime();
   var moneyIntervalId = setInterval(function () {
@@ -52,11 +53,14 @@ function resetAll() {
 }
 
 function closeModal() {
-  userIncome = userIncomeInput.value;
-  if (userIncome > 0) {
+  if (validateUserInput()) {
     document
     .getElementsByClassName("modal")[0]
     .classList.remove("is-active", "is-clipped");
+  }
+  else {
+    userIncomeInput.classList.add("is-danger");
+    document.getElementById('error-text').classList.remove('is-hidden');
   }
 }
 
@@ -70,9 +74,11 @@ document.getElementById("trigger-income-modal").onclick = openModal;
 document.getElementsByClassName("modal-close")[0].onclick = closeModal;
 
 document.getElementById("set-income").onclick = function setIncome() {
-  if (userIncomeInput.value <= 0) {
+  if (!validateUserInput()) {
     userIncomeInput.classList.add("is-danger");
+    document.getElementById('error-text').classList.remove('is-hidden');
   } else {
+    document.getElementById('error-text').classList.add('is-hidden');
     closeModal();
   }
 };
@@ -101,16 +107,12 @@ window.onload = function onPageLoad() {
 
 userIncomeInput.oninput = function onIncomeInput(e) {
   this.value = this.value.slice(0,this.maxLength);
-  // ten thousand
-  if (this.value < 10000) {
-    document.getElementById("set-income").innerHTML = 'I\'m broke';
-  }
-  // ten thousand - one lac
-  else if (this.value > 10000 && this.value <= 100000) {
+  // seventy thousand - one.five lac
+  if (this.value >= 70000 && this.value <= 150000) {
     document.getElementById("set-income").innerHTML = 'I\'m an intern';
   }
-  // one lac - ten lac
-  else if (this.value > 100000 && this.value <= 1000000) {
+  // one.five lac - ten lac
+  else if (this.value > 150000 && this.value <= 1000000) {
     document.getElementById("set-income").innerHTML = 'I\'m in the middle';
   }
   // ten lac - one crore
@@ -125,4 +127,12 @@ userIncomeInput.oninput = function onIncomeInput(e) {
   else if (this.value > 100000000) {
     document.getElementById("set-income").innerHTML = 'Bow down to me, peasants';
   }
+}
+
+function validateUserInput() {
+  value = userIncomeInput.value;
+  if (value.length == 0 || value < 70000) {
+    return false;
+  }
+  return true;
 }

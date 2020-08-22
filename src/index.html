@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <nav style="margin:0" class="level">
+    <nav class="level">
       <!-- Left side -->
       <div class="level-left">
         <div class="level-item">
-          <h1>MoneyMatch</h1>
+          <h1 class="title is-3">MoneyMatch</h1>
         </div>
       </div>    
       <!-- Right side -->
@@ -39,6 +39,7 @@
                 </span>
               </div>
             </div>
+            <span id="error-text" class="mb-2 has-text-danger is-hidden is-size-5">I said *Annual Income*</span>
             <button id="set-income" class="button is-success is-large"><i class="fas fa-lg fa-check"></i></button>
           </div>
           <button class="modal-close is-large" aria-label="close"></button>
@@ -47,7 +48,7 @@
     </nav>
     <!-- Timer container -->
     <div id="timer-container" class="has-text-dark">
-      <span class="is-size-2" id="timer">0h 0m 0s</span>
+      <span class="is-size-3" id="timer">0h 0m 0s</span>
       <span id="timer-icons">
         <span id="start-timer"><i class="far fa-2x fa-play-circle"></i></span>
         <span id="stop-timer" class="is-hidden"><i class="far fa-2x fa-stop-circle"></i></span>
@@ -58,16 +59,16 @@
       <div class="columns">
         <div class="column">
           <img src="assets/ambani.jpg" alt="Mukesh Ambani" />
-          <span class="money tag is-primary is-large">
+          <span class="mt-2 is-primary is-large is-size-3 has-text-success has-text-weight-bold">
             <i class="fas fa-rupee-sign"></i>&nbsp;
-            <span id="rich-money">0.00</span>
+            <span class="money" id="rich-money">0.00</span>
           </span>
         </div>
         <div class="column">
           <img src="assets/derp.jpg" alt="Mukesh Ambani" />
-          <span class="money tag is-primary is-large">
+          <span class="mt-2 is-primary is-large is-size-3 has-text-success has-text-weight-bold">
             <i class="fas fa-rupee-sign"></i>&nbsp;
-            <span id="poor-money">0.00</span>
+            <span class="money" id="poor-money">0.00</span>
         </div>
       </div>
     </div>
