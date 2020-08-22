@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: hsl(48, 100%, 67%);
+}
+
+body {
+  height: 100vh;
+  color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 60%;
+  margin-top: 1em;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.money {
+  margin-top: 1em;
+}
+
+nav {
+  padding: 1em 10em;
+}
+
+h1 {
+  font-size: 2em;
+  color: darkslategray;
+}
+
+#timer-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 2em;
+}
+
+#timer-icons {
+  cursor: pointer;
+}
+
+#timer-icons:hover {
+  transform: rotateX('30deg');
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content .field {
+  width: 80%;
+}
+
+.footer {
+  padding: 0 2em;
+  width: 100%;
+}
+
+.footer .content {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .content p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .modal-content .field {
+    width: 50%;
+  } 
+}
+
+@media (min-width: 768px) {
+  img {
+    height: 250px;
+    width: 250px;
+  } 
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  img {
+    height: 150px;
+    width: 150px;
+  } 
+}
