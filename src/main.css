@@ -9,7 +9,6 @@ html {
 
 body {
   height: 100vh;
-  color: antiquewhite;
   display: flex;
   flex-direction: column;
 }
@@ -27,11 +26,15 @@ body {
 
 img {
   border-radius: 50%;
+  border: 1px solid transparent;
+  padding: 2px;
+  background-color: #2f4f4f;
+  box-shadow: 0 6px 6px 0px #9d8205;
 }
 
-h1 {
-  font-size: 2em;
-  color: darkslategray;
+.banner {
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 #timer-container {
@@ -83,22 +86,22 @@ nav {
 @media (min-width: 768px) {
   .modal-content .field {
     width: 50%;
-  } 
-}
-
-@media (min-width: 768px) {
+  }
   img {
     height: 200px;
     width: 200px;
   }
   .money {
     font-size: 1.5em;
-  } 
+  }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
   img {
     height: 150px;
     width: 150px;
+  }
+  .banner {
+    align-items: center;
   } 
 }
