@@ -2,9 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="Income per second simulator">
-    <meta name="author" content="Manas Khatua">
+    <meta name="description" content="Income per second simulator" />
+    <meta name="author" content="Manas Khatua" />
+    <meta name="theme-color" content="#5875FA" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>MoneyMatch</title>
     <link
       rel="stylesheet"
@@ -16,74 +21,206 @@
     ></script>
     <link rel="stylesheet" href="main.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147228824-2"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-147228824-2"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-147228824-2');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-147228824-2");
     </script>
   </head>
   <body>
+    <!-- Navigation -->
     <nav class="level">
       <!-- Left side -->
       <div class="level-left">
         <div class="level-item banner">
-          <h1 class="title is-3">MoneyMatch</h1>
+          <h1 class="title is-3" style="color: #5875fa;">MoneyMatch</h1>
           <p class="has-text-dark">Income per second simulator</p>
         </div>
-      </div>    
+      </div>
       <!-- Right side -->
       <div class="level-right">
+        <p class="level-item">
+          <a id="trigger-contenders-modal">Contenders</a>
+        </p>
         <p class="level-item"><a id="trigger-income-modal">Set Income</a></p>
-        <div class="modal">
+        <div id="income-modal" class="modal">
           <div class="modal-background"></div>
           <div class="modal-content">
             <!-- Any other Bulma elements you want -->
             <div class="field">
               <div class="control has-icons-left">
-                <input maxlength="11" id="user-income" class="input is-success is-large" type="number" placeholder="Your annual income">
+                <input
+                  maxlength="11"
+                  id="user-income"
+                  class="input is-success is-large"
+                  type="number"
+                  placeholder="Your annual income"
+                />
                 <span class="icon is-small is-left">
                   <i class="fas fa-rupee-sign"></i>
                 </span>
               </div>
             </div>
-            <span id="error-text" class="mb-2 has-text-danger is-hidden is-size-5">I said *Annual Income*</span>
-            <button id="set-income" class="button is-success is-large"><i class="fas fa-lg fa-check"></i></button>
+            <span
+              id="error-text"
+              class="mb-2 has-text-danger is-hidden is-size-5"
+              >I said *Annual Income*</span
+            >
+            <button id="set-income" class="button is-success is-large">
+              <i class="fas fa-lg fa-check"></i>
+            </button>
           </div>
-          <button class="modal-close is-large" aria-label="close"></button>
+          <button
+            id="income-modal-close"
+            class="modal-close is-large"
+            aria-label="close"
+          ></button>
+        </div>
+        <div id="contenders-modal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <!-- Any other Bulma elements you want -->
+            <div class="box">
+              <p class="is-size-4 has-text-centered has-text-dark">
+                Select your contender
+              </p>
+              <table class="table is-striped is-hoverable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Net Worth</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="contender-row is-selected">
+                    <td class="col-1">
+                      <figure class="image is-48x48">
+                        <img
+                          class="is-rounded"
+                          src="assets/ambani.jpg"
+                          alt="Mukesh Ambani"
+                        />
+                      </figure>
+                      <span
+                        style="display: flex; flex-direction: column;"
+                        class="contender-details"
+                      >
+                        <span class="is-size-6">Mukesh Ambani</span>
+                        <span class="is-size-7">CEO, Reliance</span>
+                      </span>
+                    </td>
+                    <td class="contender-nw">$78.2 billion</td>
+                  </tr>
+                  <tr class="contender-row">
+                    <td class="col-1">
+                      <figure class="image is-48x48">
+                        <img
+                          class="is-rounded"
+                          src="assets/bezos.jpeg"
+                          alt="Jeff Bezos"
+                        />
+                      </figure>
+                      <span
+                        style="display: flex; flex-direction: column;"
+                        class="contender-details"
+                      >
+                        <span class="is-size-6">Jeff Bezos</span>
+                        <span class="is-size-7">Founder, Amazon</span>
+                      </span>
+                    </td>
+                    <td class="contender-nw">$196.3 billion</td>
+                  </tr>
+                  <tr class="contender-row">
+                    <td class="col-1">
+                      <figure class="image is-48x48">
+                        <img
+                          class="is-rounded"
+                          src="assets/gates.jpeg"
+                          alt="Bill Gates"
+                        />
+                      </figure>
+                      <span
+                        style="display: flex; flex-direction: column;"
+                        class="contender-details"
+                      >
+                        <span class="is-size-6">Bill Gates</span>
+                        <span class="is-size-7">Co-founder, Microsoft</span>
+                      </span>
+                    </td>
+                    <td class="contender-nw">$114.5 billion</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button id="set-contender" class="button is-success is-large">
+              <i class="fas fa-lg fa-check"></i>
+            </button>
+          </div>
+          <button
+            id="contenders-modal-close"
+            class="modal-close is-large"
+            aria-label="close"
+          ></button>
         </div>
       </div>
     </nav>
     <!-- Timer container -->
-    <div id="timer-container" class="has-text-dark">
+    <div id="timer-container">
       <span class="is-size-3" id="timer">0h 0m 0s</span>
       <span id="timer-icons">
         <span id="start-timer"><i class="far fa-2x fa-play-circle"></i></span>
-        <span id="stop-timer" class="is-hidden"><i class="far fa-2x fa-stop-circle"></i></span>
+        <span id="pause-timer" class="is-hidden"
+          ><i class="far fa-2x fa-pause-circle"></i
+        ></span>
+        <span id="stop-timer" class="is-hidden"
+          ><i class="far fa-2x fa-stop-circle"></i
+        ></span>
       </span>
     </div>
     <!-- Main container -->
     <div class="container">
       <div class="columns">
         <div class="column">
-          <img src="assets/ambani.jpg" alt="Mukesh Ambani" />
-          <span class="mt-2 is-primary is-large is-size-3 has-text-success has-text-weight-bold">
+          <span id="rich-tag" class="tag is-success is-light"
+            >Rs 5,844,540,000,000</span
+          >
+          <img id="rich-dude" src="assets/ambani.jpg" alt="Mukesh Ambani" />
+          <span
+            class="mt-2 is-primary is-large is-size-3 has-text-success has-text-weight-bold"
+          >
             <i class="fas fa-rupee-sign"></i>&nbsp;
             <span class="money" id="rich-money">0.00</span>
           </span>
         </div>
         <div class="column">
-          <img src="assets/derp.jpg" alt="Mukesh Ambani" />
-          <span class="mt-2 is-primary is-large is-size-3 has-text-success has-text-weight-bold">
+          <span id="poor-tag" class="tag is-success is-light">???</span>
+          <img id="poor-dude" src="assets/derp.jpg" alt="Atmanirbhar" />
+          <span
+            class="mt-2 is-primary is-large is-size-3 has-text-success has-text-weight-bold"
+          >
             <i class="fas fa-rupee-sign"></i>&nbsp;
             <span class="money" id="poor-money">0.00</span>
+          </span>
         </div>
       </div>
     </div>
+    <!-- Footer -->
     <footer class="footer has-background-dark mt-4">
       <div class="content has-text-centered">
-        <i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;
+        <a
+          class="has-text-light"
+          href="https://github.com/manask4/moneymatch"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fab fa-github"></i></a
+        >&nbsp;&nbsp;
         <p class="is-size-7 is-italic">
           Just for shits and giggles.
           <i class="far fa-laugh"></i>

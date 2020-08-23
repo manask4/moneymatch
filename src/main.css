@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  width: 60%;
+  width: 70%;
   margin-top: 1em;
 }
 
@@ -24,7 +24,7 @@ body {
   align-items: center;
 }
 
-img {
+.container img {
   border-radius: 50%;
   border: 1px solid transparent;
   padding: 2px;
@@ -42,14 +42,12 @@ img {
   flex-direction: column;
   text-align: center;
   font-size: 2em;
+  color: #436060;
 }
 
-#timer-icons {
+#timer-icons span {
   cursor: pointer;
-}
-
-#timer-icons:hover {
-  transform: rotateX('30deg');
+  transition: 0.2s linear;
 }
 
 .modal-content {
@@ -60,6 +58,19 @@ img {
 
 .modal-content .field {
   width: 80%;
+}
+
+#contenders-modal .col-1 figure {
+  float: left;
+}
+
+#contenders-modal .col-1 .contender-details {
+  position: relative;
+  left: 5px;
+}
+
+#contenders-modal tr {
+  cursor: pointer;
 }
 
 nav,
@@ -77,10 +88,16 @@ nav {
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  color: #f5f5f5;
 }
 
 .footer .content p {
   margin: 0;
+}
+
+.tag {
+  transform: rotate(25deg) translate(50px, 0px);
+  box-shadow: 0px 2px 4px #ccc;
 }
 
 @media (min-width: 768px) {
@@ -103,5 +120,5 @@ nav {
   }
   .banner {
     align-items: center;
-  } 
+  }
 }
